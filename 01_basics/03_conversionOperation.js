@@ -35,8 +35,44 @@ let notEmpty = "Priyal";
 
 let someNum = 33;
 let someNumString = String(someNum);
-console.log(someNumString);
-console.log(typeof someNumString);
+// console.log(someNumString);
+// console.log(typeof someNumString);
+
+// ********* Operations **********
+
+let val = 3;
+let negVal = -val;
+// console.log(negVal);
+
+let str1 = "Hello";
+let str2 = " Priyal"
+let str3 = str1 + str2;
+// console.log(str3);
+
+// console.log("1" + 2);
+// console.log("1" + "3");
+// console.log("1" + 2 + 2);
+// console.log(1 + 2 + "2");
+
+// console.log(true);
+// console.log(+true);
+// console.log(+"");
+
+let num1, num2, num3;
+// num1 = num2 = num3 = 2 + 2;  dont write this way
+
+let gameCounter = 40;
+gameCounter++;
+console.log(gameCounter);
+++gameCounter;
+console.log(gameCounter);
+
+
+
+
+
+
+
 
 
 
