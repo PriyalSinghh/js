@@ -24,5 +24,7 @@ const myFunction = function(){
     console.log("Hello World!");
 }
 
+// All the primitve data types gets stored in stack and non-primitve gets stored in heap memory.
+
 
 
