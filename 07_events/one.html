@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <h2>Amazing images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="/Users/priyalsingh/Desktop" alt="photoshop"</li>
+            <li><img src="/Users/priyalsingh/Desktop" alt="" width="200px" id="japan"></li>
+            <li><img src="/Users/priyalsingh/Desktop" alt="" width="200px" id="river"></li>
+            <li><img src="/Users/priyalsingh/Desktop" alt="" width="200px" id="me"></li>
+            <li><a style="color: aliceblue;" id="google" href="https://google.com">Google</a></li>
+
+        </ul>
+    </div>
+    <!-- the js events run in sequence but there are some exceptions. -->
+     <script>
+        // document.getElementById('#me').onclick() = function(){
+        //     alert('me');
+        // } can be problematic
+        document.getElementById('me').addEventListener('click',function(e) {
+            alert('me');
+        }, false) 
+        // attachEvent() is also there.
+        // jQuery() is also there.
+        // types , timestamps, default prevented, target, toElement(), sourceElement(), currentTarget, 
+        // clientX, clientY, screenX, screenY, 
+        // altKey, controlKey, shiftkey, keyCode
+     </script>
+</body>
+</html>
