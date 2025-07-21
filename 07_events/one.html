@@ -18,18 +18,44 @@
         </ul>
     </div>
     <!-- the js events run in sequence but there are some exceptions. -->
+     <!-- // attachEvent() is also there.
+        // jQuery() is also there.
+        // types , timestamps, default prevented, target, toElement(), sourceElement(), currentTarget, 
+        // clientX, clientY, screenX, screenY, 
+        // altKey, controlKey, shiftkey, keyCode -->
      <script>
         // document.getElementById('#me').onclick() = function(){
         //     alert('me');
         // } can be problematic
-        document.getElementById('me').addEventListener('click',function(e) {
-            alert('me');
-        }, false) 
-        // attachEvent() is also there.
-        // jQuery() is also there.
-        // types , timestamps, default prevented, target, toElement(), sourceElement(), currentTarget, 
-        // clientX, clientY, screenX, screenY, 
-        // altKey, controlKey, shiftkey, keyCode
+        // //document.getElementById('images').addEventListener('click',function(e) {
+        //     //console.log("Clicked inside the list.");
+            
+        // }, false) 
+        // document.getElementById('japan').addEventListener('click',function(e) {
+        //     //console.log("clicked japan");
+        //     e.stopPropagation() //this will stop the propagation of this event.
+            
+        // }, false) 
+        //there are two things event bubbling and event capturing.
+        //here when u will click japan then first this event will occur then the clicked inside the list will get printed, it is like a bubble, means from smaller to larger or we can say from inside to outside and this is event bubbling.And captuirng is just the opposite of this which can be triggered by setting the false parameter as true.
+
+        // document.getElementById('google').addEventListener('click',function(e) {
+        //     console.log('google clicked');
+        //     e.preventDefault();
+        //     e.stopPropagation();
+        // },false)
+
+        document.querySelector('#images').addEventListener('click', function(e){
+            console.log(e.target.parentNode);
+            if(e.target.tagName === 'IMG') {
+                console.log(e.target.id);
+                
+                let removeIt = e.target.parentNode;
+                removeIt.remove();// it will remove the image when u will click it
+            }
+            //removeIt.parentNode.removeChild(removeIt);
+            
+        },false)
      </script>
 </body>
 </html>
