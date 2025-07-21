@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async</h1>
+    <button id = 'stop'>Stop</button>
+
+
+    <script>
+        const sayPriyal = function() {
+            console.log("Priyal");
+            
+        }
+        const chngeText = function() {
+            document.querySelector('h1').innerHTML = "best js series";
+        }
+        
+        const changeMe = setTimeout(chngeText, 2000)
+        // set timeout takes the time and after that time it does the work only once wherease in case of "setInterval" it takes time and it continuously does the task again and again after that interval.
+        //clearTimeout(changeMe)
+
+        document.querySelector('#stop').addEventListener('click',function (e) {
+            console.log("stopped");
+            
+        },false)
+    </script>
+</body>
+</html>
