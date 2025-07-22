@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+
+    <div id="userCard" style="text-align: center; border: 1px solid white; width: 250px; margin: auto; padding: 20px; cursor: pointer;">
+        <img id="avatar" src="" width="100" height="100"><br><br>
+        <strong id="name">Loading...</strong><br><br>
+        <span id="followers" style="display: none;"></span>
+    </div>
+
+    
+
+
+    <script>
+        const requestURL = "https://api.github.com/users/hiteshchoudhary"
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestURL);
+        xhr.onreadystatechange = function() {
+            console.log(xhr.readyState);
+            if(xhr.readyState === 4) {
+                //const data = this.responseText; // string
+                const data = JSON.parse(this.responseText);
+                //console.log(typeof data);
+                //console.log(data);
+                document.getElementById('avatar').src = data.avatar_url;
+                document.getElementById('name').innerText = data.name || data.login;
+                document.getElementById('followers').innerText = data.followers;
+
+                document.getElementById('userCard').onclick = function () {
+                    const followersElement = document.getElementById('followers');
+                    if(followersElement.style.display === "none")
+                    followersElement.style.display = "block";
+                    else
+                    followersElement.style.display = "none";
+                };
+                
+                
+            }
+            
+        };
+        //console.log(xhr.readyState);
+        
+        xhr.send();
+    </script>
+</body>
+</html>
